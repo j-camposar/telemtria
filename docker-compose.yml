@@ -1,0 +1,21 @@
+services:
+  consumidor: 
+    build:  
+      context: ./consumidor
+    container_name: consumidor
+    ports:  
+      - "8081:8080"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: ${SPRING_KAFKA_BOOTSTRAP_SERVERS}
+      SPRING_REGION: ${SPRING_REGION}
+      SRING_ACCESS_KEY: ${SRING_ACCESS_KEY}
+      SPRING_SECRET_ACCES: ${SPRING_SECRET_ACCES}
+      SPRING_TOKEN_SESSION: ${SPRING_TOKEN_SESSION}
+  productor: 
+    build: 
+      context: ./productor
+    container_name: productor
+    ports: 
+      - "8082:8080"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: ${SPRING_KAFKA_BOOTSTRAP_SERVERS}

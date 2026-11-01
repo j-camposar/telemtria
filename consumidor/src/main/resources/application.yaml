@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: consumidor
+  kafka: 
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS}
+    consumer: 
+      group-id: prueba-group-1
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+aws: 
+  region: ${SPRING_REGION}
+  access-key-id: ${SRING_ACCESS_KEY}
+  secret-acces-key: ${SPRING_SECRET_ACCES}
+  session-token: ${SPRING_TOKEN_SESSION}
+        
+        
